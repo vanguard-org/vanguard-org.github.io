@@ -9,15 +9,14 @@ const hx = {
             main.innerHTML = `<div class="bg-dark text-center text-white" style="height: 100vh !important">
             <h1>흠... 이 페이지를 찾을 수 없네요</h1>
             <h3>그래도 서버의 보안은 VANGUARD에서 찾을 수 있어요!</h3>
-            <h3>VANGUARD 봇 소개를 확인해 보세요.</h3>
+            <h3><a hx-page="main">VANGUARD 봇 소개</a>를 확인해 보세요.</h3>
             </div>`
-            return
+        } else {
+            location.hash = page
+            window.scrollTo(0, 0)
+            const html = await res.text()
+            main.innerHTML = html
         }
-        location.hash = page
-        window.scrollTo(0, 0)
-        const html = await res.text()
-        main.innerHTML = html
-
         hx.ev(main)
     },
     ev: document => {

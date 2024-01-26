@@ -20,6 +20,11 @@ html::-webkit-scrollbar {
     cursor: pointer;
 }
 
+.link-blue a[hx-page],.link-blue a[hx-open] {
+    color: blue !important;
+    text-decoration: underline;
+}
+
 .bg-dark {
     background-color: #182029 !important;
 }
