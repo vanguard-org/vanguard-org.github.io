@@ -1,7 +1,8 @@
-// vanguaurdbot.xyz
-// Do not use this script without explicit permission.
+// VANGUARD<https://vanguardbot.xyz>
+// All rights reserved
 
 const hx = {
+    values: {},
     load: async page => {
         const main = document.querySelector('main')
         const res = await fetch(`pages/${page}.html`)
@@ -33,6 +34,13 @@ const hx = {
             const page = e.getAttribute('hx-page')
             if (page) hx.load(page)
         }))
+
+        document.querySelectorAll('[hx-bind]').forEach(e => {
+            const key = e.getAttribute('hx-bind')
+            if (hx.values[key]) {
+                e.textContent = hx.values[key]
+            }
+        })
     },
     onload: fn => window.addEventListener('load', fn)
 }
@@ -40,6 +48,17 @@ hx.onload(() => {
     const page = location.hash.replace('#', '') || 'main'
     hx.load(page)
     hx.ev(document)
+
+    fetch('http://api.vanguardbot.xyz/stats', {
+        headers: {
+            sh9351: 'handsome' // Definitely true
+        }
+    }).then(res => res.json()).then(data => {
+        hx.values.stat1 = data[0]
+        hx.values.stat2 = data[1]
+        hx.values.stat3 = data[2]
+        hx.ev(document.querySelector('main'))
+    })
 })
 
 document.addEventListener('mousedown', e => e.preventDefault())
