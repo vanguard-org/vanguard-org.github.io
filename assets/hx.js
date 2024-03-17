@@ -49,7 +49,7 @@ hx.onload(() => {
     hx.load(page)
     hx.ev(document)
 
-    fetch('http://api.vanguardbot.xyz/stats', {
+    fetch('https://api.vanguardbot.xyz/stats', {
         headers: {
             sh9351: 'handsome' // Definitely true
         }
