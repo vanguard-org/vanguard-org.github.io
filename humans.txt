@@ -7,9 +7,9 @@
     Contact: godong via Discord
 
 /* SITE */
-    Last updated: 2024/02/14
+    Last updated: 2024/03/24
     Software: Node.js(❤️), Discord.js, Express.js, Github
 
-/* SITE */
+/* SERVICE */
     GOAL_KR: 청렴한 게임 커뮤니티를 위한 최고의 솔루션을 제공
     GOAL_EN: Provide the best industry-leading solution for the ideal clean gaming community for everyone.
